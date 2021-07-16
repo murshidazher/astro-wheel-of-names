@@ -1,0 +1,54 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CoverImage from '../components/CoverImage.astro';
+
+---
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Astro</title>
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="stylesheet" href="/style/global.css">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+
+  <style>
+  </style>
+</head>
+
+<body>
+
+  <Header />
+
+  <main class="cf pa3 pa4-m pa5-l mw9 center">
+    <div class="black-90 w-100 pb1">
+      <h1 class="f4 fw6 f1-ns flex items-center justify-center lh-title measure mt0 mb2">
+        Your list
+      </h1>
+      <p class="f5 f4-ns lh-copy mt0 mb4 flex items-center justify-center">
+        Collection of lists.
+      </p>
+    </div>
+  </main>
+  <article class="w100 mb4">
+      <h1 class="f4 bold center mw6">Cats</h1>
+      <ul class="list pl0 ml0 center mw6 ba b--light-silver br2">
+        <li class="ph3 pv3 bb b--light-silver">Mackeral Tabby</li>
+        <li class="ph3 pv3 bb b--light-silver">Burmese</li>
+        <li class="ph3 pv3 bb b--light-silver">Orange Tabby</li>
+        <li class="ph3 pv3 bb b--light-silver">Maine Coon</li>
+        <li class="ph3 pv3 bb b--light-silver">Siamese</li>
+        <li class="ph3 pv3 bb b--light-silver">Scottish Fold</li>
+        <li class="ph3 pv3">American Bobtail</li>
+      </ul>
+    </article>
+  <Footer />
+</body>
+
+</html>

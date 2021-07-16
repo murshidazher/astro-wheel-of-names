@@ -1,47 +1,57 @@
 ---
-import Tour from '../components/Tour.astro';
-import Button from '../components/Button.jsx';
-import Characters from '../components/Characters.jsx';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CoverImage from '../components/CoverImage.astro';
 
-const characters = await fetch('https://finalspaceapi.com/api/v0/character?limit=5').then((res) => res.json());
 ---
 
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Astro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Astro</title>
 
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <link rel="stylesheet" href="/style/global.css">
-    <link rel="stylesheet" href="/style/home.css">
+  <link rel="stylesheet" href="/style/global.css">
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
 
-    <style>
-        header {
-            display: flex;
-            flex-direction: column;
-            gap: 1em;
-            max-width: min(100%, 68ch);
-        }
-    </style>
+  <style>
+  </style>
 </head>
+
 <body>
-    <main>
-        <header>
-            <div>
-                <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-                <h1>Welcome to <a href="https://astro.build/">Astro Development</a></h1>
-                <p>
-                    <Button:load>Hello, Astro!</Button:load>
-                </p>
-            </div>
-        </header>
 
-        <Characters characters={characters} />
+  <Header />
 
-        <Tour />
-    </main>
+  <main class="cf pa3 pa4-m pa5-l mw9 center">
+    <div class="black-90 w-100 pb1">
+      <h1 class="f4 fw6 f1-ns flex-l items-center justify-center lh-title measure mt0 mb2">
+        Ready to get started?
+      </h1>
+      <p class="f5 f4-ns dib-m lh-copy mt0 mb4 flex-l items-center justify-center">
+        Enter a list and spin the wheel to select a winner at random.
+      </p>
+      <div class="w-100 flex-l items-center justify-center tl">
+        <a class="f6 fw6 dib ba mb4 b--black-20 bg-blue white ph2 ph4-ns pv2 pv3-ns br2 grow no-underline"
+          href="/create">
+          <span class="dib pr1">Create a List 👉</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <div class="f6 lh-copy fl w-100 mb4-ns mb2">
+    <div class="flex items-center justify-center pa2 bg-yellow black fw4 f6-ns f7-l ph4">
+      <span class="pr3">⚠️</span>
+      <span class="lh-title ">Astro is still in the early stages of development, therefore missing features and
+        glitches are to be expected.</span>
+    </div>
+  </div>
+
+  <CoverImage />
+  <Footer />
 </body>
+
 </html>
